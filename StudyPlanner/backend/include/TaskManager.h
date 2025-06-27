@@ -11,8 +11,8 @@ class TaskManager
         int next_taskId;
         shared_ptr<ReminderScheduler>reminder_scheduler; 
     public:
-        void loadTask(const json& );//从json读入task
-        json dumpTask()const;//丢弃task
+        void loadTask();//从json读入task
+        json dumpTask()const;//程序终止时导出到task
         Task createTask(const TaskContent &t_content, chrono::system_clock::time_point ddl, int p, bool n_review);
 
         bool updateTask(int id, const TaskContent* new_content, const chrono::system_clock::time_point* new_ddl, const int* new_p,
